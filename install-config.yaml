@@ -43,7 +43,7 @@ platform:
         networks:
         - SEG-172.17.3.0_s25-Alessio_Buccoliero
         resourcePool: /DC-KO2-LAB-01/host/CL-KO2-LAB-01//Resources
-        folder: /DC-KO2-LAB-01/vm/AlessioBuccoliero/
+        folder: /DC-KO2-LAB-01/vm/AlessioBuccoliero-ABU/
       zone: generated-zone
     ingressVIPs:
     - 172.17.3.110
