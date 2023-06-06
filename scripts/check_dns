@@ -1,0 +1,13 @@
+172.17.3.200 api.abuocpupi02.abu.local
+172.17.3.201 api-int.abuocpupi02.abu.local
+172.17.3.210 *.apps.abuocpupi02.abu.local
+172.17.3.130 bootstrap.abuocpupi02.abu.local
+172.17.3.131 master01.abuocpupi02.abu.local
+172.17.3.132 master02.abuocpupi02.abu.local
+172.17.3.133 master03.abuocpupi02.abu.local
+172.17.3.137 worker01.abuocpupi02.abu.local
+172.17.3.138 worker02.abuocpupi02.abu.local
+172.17.3.139 worker03.abuocpupi02.abu.local
+172.17.3.134 infra01.abuocpupi02.abu.local
+172.17.3.135 infra02.abuocpupi02.abu.local
+172.17.3.136 infra03.abuocpupi02.abu.local
