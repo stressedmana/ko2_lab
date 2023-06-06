@@ -9,7 +9,7 @@ compute:
   hyperthreading: Enabled
   name: worker
   platform: {}
-  replicas: 6
+  replicas: 3
 controlPlane:
   architecture: amd64
   hyperthreading: Enabled
