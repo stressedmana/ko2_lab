@@ -1,9 +1,9 @@
 additionalTrustBundlePolicy: Proxyonly
 apiVersion: v1
 baseDomain: abu.local
-proxy:
-  httpProxy: http://172.17.3.251:3128
-  httpsProxy: http://172.17.3.251:3128
+#proxy:
+#  httpProxy: http://172.17.3.251:3128
+#  httpsProxy: http://172.17.3.251:3128
 compute:
 - architecture: amd64
   hyperthreading: Enabled
@@ -24,14 +24,14 @@ networking:
   - cidr: 10.132.0.0/14
     hostPrefix: 23
   machineNetwork:
-  - cidr: 172.17.3.128/25
+  - cidr: 172.18.3.128/25
   networkType: OVNKubernetes
   serviceNetwork:
-  - 10.136.0.0/16
+  - 10.137.0.0/16
 platform:
   vsphere:
     apiVIPs:
-    - 172.17.3.200
+    - 172.18.3.200
     failureDomains:
     - name: generated-failure-domain
       region: generated-region
@@ -41,20 +41,20 @@ platform:
         datacenter: DC-KO2-LAB-01
         datastore: /DC-KO2-LAB-01/datastore/vsanDatastore
         networks:
-        - SEG-172.17.3.128_s25-Alessio_Buccoliero
-        resourcePool: /DC-KO2-LAB-01/host/CL-KO2-LAB-01//Resources
-        folder: /DC-KO2-LAB-01/vm/AlessioBuccoliero-ABU/
+        - SEG-172.18.3.128_s25-Alessio_Buccoliero
+        resourcePool: /DC-KO2-LAB-01/host/CL-KO2-LAB-01/Resources/RP-Alessio_Buccoliero
+        folder: /DC-KO2-LAB-01/vm/ABU-AlessioBuccoliero/UPI/
         diskType: thin
       zone: generated-zone
     ingressVIPs:
-    - 172.17.3.210
+    - 172.18.3.210
     vcenters:
     - datacenters:
       - DC-KO2-LAB-01
       password: assembly.01
       port: 443
       server: ko2vcenter01lab.ko2.local
-      user: Alessandro.Pilati
+      user: Alessio.Buccoliero
 fips: false
 publish: External
 pullSecret: '{"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMGNhNzEyODVjMTBlNDUyOWE0ZTk5NDU5YzE5NTA1MTg6SVpHOVVWRUxYSElaREhNSVhVSlRTTlFMWjk5WjJFVjZWQlozODlCWDdLUzdEUzU3RlRTQjg2RE5ISkFXWE9ZMQ==","email":"alessandro.pilati@ko2.it"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMGNhNzEyODVjMTBlNDUyOWE0ZTk5NDU5YzE5NTA1MTg6SVpHOVVWRUxYSElaREhNSVhVSlRTTlFMWjk5WjJFVjZWQlozODlCWDdLUzdEUzU3RlRTQjg2RE5ISkFXWE9ZMQ==","email":"alessandro.pilati@ko2.it"},"registry.connect.redhat.com":{"auth":"fHVoYy1wb29sLTQzYjU5NDFkLTU3NWYtNGMxZi1hZjAxLWU0YWFmMDU1ODc4YTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTNPR0l3TWpnMllUTmhOR1kwTjJaa1lXRmpaVEl4WmpkbU1UVTJNRE0wTnlKOS5KOUQwN0JieEdfSTF3SndVZWtNaUVCXzJzSXRSdEptZWRfM3h1Y08xNEdLNi1iSFhxX245UlJMVm0yVmp1ZVNpN2l0MHdjeEVXMU5MX29zZE5YcFBOdmRWdi1fLWlPbFlWcWcxaUdBRmUwS2RUY0d5WUtnX3VWdDhfNlNmTmRsYnllRG90dTlCbE5mN2NiV2FaNU9UeDByRlZtV2lfNzhJckI4cnpoaEdqb24tOHVnLXY2SjFoWG02cXVVRkZlc2RpZ1JiZ1ViSm9qMGo2NTF6alJIS3lXX3NKSWVvM1phWGFPNG1scXQ3Z3pvLWtTYi1NODV6aUpQR1pXWXhNX0tTbUhtX2VITFZ0YllDMU9PVXZyekNjWmMwSnppZFBCNldjT1NlVzB3M3ptcUFYbGZQdm40NFptRE1QcnZMQmY5RjJEOUduT3ZpR01LRnFDYjhwSmh5UVY1NFo5a2h0aG13eGNEZUppR2hVZHBZdDFtQTdwUWVKdlR5QnBnZ2l0NDV4U2l6d1lHbUtteGl1Z1RUeHd6NkNVYnNMN0Vxb1VxNXhmcFN0dWZvcnNVY2tBa1A5NGdtUThPdGRZOWYzWE5KdVZYa29ONXV5dlVjVHF5T1RQMDJ3SFp5eTNnbFloU3R6VnpuRHVtUFJSYzY0SDZfUTFpT0pCSkEzY3pmcVdaODVnV1hHRF8xRnV1bEZyOF9wb01HTG5IbWR4UEx2ZjRzSV9TUDNWb191aElOT0t4eGNNR0NPZnZlcjlZXzBxN3RIOGd5X1lnelA1eDdjaUMtTHJYYnlmM1ExR0dJRWU1WldHU2ZEM29aX0k2Xzk0NFNSZS1SWG1lSTlPa1lMNHZHbmdEdWRnU3JFcW00UFpWRjQtblpEQW1YWm4ySFpySG5OSE5meFdjMm44TQ==","email":"alessandro.pilati@ko2.it"},"registry.redhat.io":{"auth":"fHVoYy1wb29sLTQzYjU5NDFkLTU3NWYtNGMxZi1hZjAxLWU0YWFmMDU1ODc4YTpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSTNPR0l3TWpnMllUTmhOR1kwTjJaa1lXRmpaVEl4WmpkbU1UVTJNRE0wTnlKOS5KOUQwN0JieEdfSTF3SndVZWtNaUVCXzJzSXRSdEptZWRfM3h1Y08xNEdLNi1iSFhxX245UlJMVm0yVmp1ZVNpN2l0MHdjeEVXMU5MX29zZE5YcFBOdmRWdi1fLWlPbFlWcWcxaUdBRmUwS2RUY0d5WUtnX3VWdDhfNlNmTmRsYnllRG90dTlCbE5mN2NiV2FaNU9UeDByRlZtV2lfNzhJckI4cnpoaEdqb24tOHVnLXY2SjFoWG02cXVVRkZlc2RpZ1JiZ1ViSm9qMGo2NTF6alJIS3lXX3NKSWVvM1phWGFPNG1scXQ3Z3pvLWtTYi1NODV6aUpQR1pXWXhNX0tTbUhtX2VITFZ0YllDMU9PVXZyekNjWmMwSnppZFBCNldjT1NlVzB3M3ptcUFYbGZQdm40NFptRE1QcnZMQmY5RjJEOUduT3ZpR01LRnFDYjhwSmh5UVY1NFo5a2h0aG13eGNEZUppR2hVZHBZdDFtQTdwUWVKdlR5QnBnZ2l0NDV4U2l6d1lHbUtteGl1Z1RUeHd6NkNVYnNMN0Vxb1VxNXhmcFN0dWZvcnNVY2tBa1A5NGdtUThPdGRZOWYzWE5KdVZYa29ONXV5dlVjVHF5T1RQMDJ3SFp5eTNnbFloU3R6VnpuRHVtUFJSYzY0SDZfUTFpT0pCSkEzY3pmcVdaODVnV1hHRF8xRnV1bEZyOF9wb01HTG5IbWR4UEx2ZjRzSV9TUDNWb191aElOT0t4eGNNR0NPZnZlcjlZXzBxN3RIOGd5X1lnelA1eDdjaUMtTHJYYnlmM1ExR0dJRWU1WldHU2ZEM29aX0k2Xzk0NFNSZS1SWG1lSTlPa1lMNHZHbmdEdWRnU3JFcW00UFpWRjQtblpEQW1YWm4ySFpySG5OSE5meFdjMm44TQ==","email":"alessandro.pilati@ko2.it"}}}'
