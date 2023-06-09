@@ -18,7 +18,7 @@ controlPlane:
   replicas: 3
 metadata:
   creationTimestamp: null
-  name: ABU-abuocpipi01
+  name: abuocpipi01
 networking:
   clusterNetwork:
   - cidr: 10.128.0.0/14
