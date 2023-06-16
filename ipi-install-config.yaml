@@ -5,13 +5,21 @@ compute:
 - architecture: amd64
   hyperthreading: Enabled
   name: worker
-  platform: {}
+  platform:
+    vsphere:
+      cpus: 8
+      coresPerSocket: 4
+      memoryMB: 16384
   replicas: 6
 controlPlane:
   architecture: amd64
   hyperthreading: Enabled
   name: master
-  platform: {}
+  platform:
+    vsphere:
+      cpus: 8
+      coresPerSocket: 4
+      memoryMB: 16384
   replicas: 3
 metadata:
   creationTimestamp: null
