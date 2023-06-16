@@ -35,8 +35,6 @@ networking:
   - 10.136.0.0/16
 platform:
   vsphere:
-    platform.vsphere.cpus: 8
-    platform.vsphere.memoryMB: 16384
     apiVIPs:
     - 172.18.3.100
     cluster: CL-KO2-LAB-01
