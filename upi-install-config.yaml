@@ -45,7 +45,7 @@ platform:
     - 172.18.3.210
     network: SEG-172.18.3.128_s25-Alessio_Buccoliero
     resourcePool: /DC-KO2-LAB-01/host/CL-KO2-LAB-01/Resources/RP-Alessio_Buccoliero
-    folder: /DC-KO2-LAB-01/vm/ABU-AlessioBuccoliero/UPI/
+    folder: /DC-KO2-LAB-01/vm/ABU-Alessio_Buccoliero/UPI/
     password: assembly.01
     username: Alessio.Buccoliero
     vCenter: ko2vcenter01lab.ko2.local
